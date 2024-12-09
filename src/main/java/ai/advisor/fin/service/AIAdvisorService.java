@@ -22,5 +22,4 @@ public class AIAdvisorService {
         ChatResponse chatResponse = chatModel.call(prompt);
         return new AIAdvisorModel.Answer(chatResponse.getResult().getOutput().getContent());
     }
-
 }
