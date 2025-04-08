@@ -1,6 +1,7 @@
 package ai.advisor.fin.resource;
 
-import ai.advisor.fin.model.AIAdvisorModel;
+import ai.advisor.fin.model.AIAdvisorResponse;
+import ai.advisor.fin.model.AIAdvisorQuery;
 import ai.advisor.fin.service.AIAdvisorService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class AIAdvisorResource {
     }
 
     @PostMapping("/advise")
-    public AIAdvisorModel.Answer advise(@RequestBody AIAdvisorModel.Question question) {
+    public AIAdvisorResponse advise(@RequestBody AIAdvisorQuery question) {
         return aiAdvisorService.generate(question);
     }
 }
